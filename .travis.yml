@@ -16,11 +16,12 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t abassadey/react-test -f ./client/Dockerfile.dev ./client
 
-  script:
+script:
     - docker run -e CI=true abassadey/react-test npm run test
 
-  deploy:
+deploy:
     provider: script
     script: bash ./deploy.sh
     on:
       branch: master
+  
