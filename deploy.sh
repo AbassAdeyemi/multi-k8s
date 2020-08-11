@@ -1,5 +1,5 @@
 docker build -t abassadey/multi-client:latest -t abassadey/multi-client:$SHA -f ./client/Dockerfile ./client
-docker build -t abassadey/multi-server:latest -t abassadey/multi-server:$SHA -f ./client/Dockerfile ./server
+docker build -t abassadey/multi-server:latest -t abassadey/multi-server:$SHA -f ./server/Dockerfile ./server
 docker build -t abassadey/multi-worker:latest -t abassadey/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 docker push abassadey/multi-client:latest
 docker push abassadey/multi-server:latest
